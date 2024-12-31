@@ -7,16 +7,20 @@
 <div id="movies">
   <table>
     <thead>
+      <tr>
         <th>Title</th>
         <th>Rating</th>
-        <th>Release date</th>
+        <th>Release Date</th>
+      </tr>
     </thead>
     <tbody>
-      <% @movies.each do |movie| %>
-        <td> <%movie.title%> </td>
-        <td> <%movie.rating%> </td>
-        <td> <%movie.release_date%> </td>
-      <% end %>
+        <% @movies.each do |movie| %>
+        <tr>
+          <td> <%= movie.title %> </td>
+          <td> <%= movie.rating %> </td>
+          <td> <%= movie.release_date %> </td>
+        </tr>
+        <% end %>
     </tbody>
   </table>
 </div>
