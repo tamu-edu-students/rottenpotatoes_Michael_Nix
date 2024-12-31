@@ -3,25 +3,21 @@
 <% content_for :title, "Movies" %>
 
 <h1>Movies</h1>
-
+<% value= session[:sort]%>
 <div id="movies">
   <table>
     <thead>
       <tr>
-        <th><%= link_to "Title", movies_path(sort: "title", direction: (params[:sort] == "title" && session[:direction] == "asc") ? "desc" : "asc") %></th>
-        <th><%= link_to "Rating", movies_path(sort: "rating", direction: (params[:sort] == "rating" && session[:direction] == "asc") ? "desc" : "asc") %></th>
-        <th><%= link_to "Release Date", movies_path(sort: "release_date", direction: (params[:sort] == "release_date" && session[:direction] == "asc") ? "desc" : "asc") %></th>
+        <th><%= link_to "Title", movies_path(sort: "title", direction: (params[:direction] == "asc" ? "desc" : "asc")) %></th>
+        <th><%= link_to "Rating", movies_path(sort: "rating", direction: (params[:direction] == "asc" ? "desc" : "asc")) %></th>
+        <th><%= link_to "Release Date", movies_path(sort: "release_date", direction: (params[:direction] == "asc" ? "desc" : "asc")) %></th>
       </tr>
     </thead>
-    <tbody>
-      <% @movies.each do |movie| %>
-        <tr>
-          <td bgcolor=<%= params[:sort] == "title" ? (session[:direction] == "asc" ? "lightgreen" : "lightblue") : "white"%>> <%= movie.title %> </td>
-          <td bgcolor=<%= params[:sort] == "rating" ? (session[:direction] == "asc" ? "lightgreen" : "lightblue") : "white"%>> <%= movie.rating %> </td>
-          <td bgcolor=<%= params[:sort] == "release_date" ? (session[:direction] == "asc" ? "lightgreen" : "lightblue") : "white"%>> <%= movie.release_date %> </td>
-        </tr>
-      <% end %>
-    </tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <%= render movie%>
+      </tr>
+    <% end %> 
   </table>
 </div>
 
