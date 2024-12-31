@@ -1,0 +1,70 @@
+/* app/assets/stylesheets/movies.scss */
+/* Or in a separate CSS file if you prefer */
+
+#movies {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Prevents border-radius from being clipped */
+}
+
+#movies th, #movies td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Light gray separators */
+}
+
+#movies th {
+  background-color: #f0f0f0; /* Light gray header background */
+  font-weight: 600; /* Slightly bolder header text */
+  cursor: pointer; /* Indicate clickable headers */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+#movies th:hover {
+    background-color: #e0e0e0;
+}
+
+#movies tr:hover {
+  background-color: #f5f5f5; /* Very light gray on row hover */
+}
+
+#movies td.highlighted-asc {
+  background-color: lightgray;
+}
+
+#movies td.highlighted-desc {
+  background-color: darkgray;
+}
+
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Style the link inside the button */
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+h1 {
+    color: #333; /* Darker heading color */
+    margin-bottom: 20px;
+}
