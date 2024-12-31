@@ -1,22 +1,16 @@
-<div id="<%= dom_id movie %>">
-  <p>
-    <strong>Title:</strong>
-    <%= movie.title %>
-  </p>
+<%# _movie.html.erb %>
+<div id="<%= dom_id movie %>" class="movie">
+  <dl> <%# Use a definition list for key-value pairs %>
+    <dt>Title:</dt>
+    <dd><%= movie.title %></dd>
 
-  <p>
-    <strong>Rating:</strong>
-    <%= movie.rating %>
-  </p>
+    <dt>Rating:</dt>
+    <dd><%= movie.rating %></dd>
 
-  <p>
-    <strong>Description:</strong>
-    <%= movie.description %>
-  </p>
+    <dt>Description:</dt>
+    <dd><%= movie.description %></dd>
 
-  <p>
-    <strong>Release date:</strong>
-    <%= movie.release_date %>
-  </p>
-
+    <dt>Release Date:</dt>
+    <dd><%= movie.release_date.strftime("%m/%d/%Y") %></dd> <%# Format the date %>
+  </dl>
 </div>

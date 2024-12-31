@@ -17,9 +17,9 @@
     <tbody>
       <% @movies.each do |movie| %>
         <tr>
-          <td class="<%= params[:sort] == "title" ? (session[:direction] == "asc" ? "highlighted-asc" : "highlighted-desc") : "" %>"> <%= movie.title %> </td>
-          <td class="<%= params[:sort] == "rating" ? (session[:direction] == "asc" ? "highlighted-asc" : "highlighted-desc") : "" %>"> <%= movie.rating %> </td>
-          <td class="<%= params[:sort] == "release_date" ? (session[:direction] == "asc" ? "highlighted-asc" : "highlighted-desc") : "" %>"> <%= movie.release_date.strftime("%m/%d/%Y") %> </td>
+          <td class="<%= session[:sort] == "title" ? (session[:direction] == "asc" ? "highlighted-asc" : "highlighted-desc") : "" %>"> <%= movie.title %> </td>
+          <td class="<%= session[:sort] == "rating" ? (session[:direction] == "asc" ? "highlighted-asc" : "highlighted-desc") : "" %>"> <%= movie.rating %> </td>
+          <td class="<%= session[:sort] == "release_date" ? (session[:direction] == "asc" ? "highlighted-asc" : "highlighted-desc") : "" %>"> <%= movie.release_date.strftime("%m/%d/%Y") %> </td>
           <td><%= link_to "Show", movie %></td>
         </tr>
       <% end %>
