@@ -32,11 +32,11 @@
 }
 
 #movies td.highlighted-asc {
-  background-color: lightgray;
+  background-color: lightblue;
 }
 
 #movies td.highlighted-desc {
-  background-color: darkgray;
+  background-color: darkblue;
 }
 
 button {
