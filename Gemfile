@@ -66,4 +66,5 @@ end
 
 group :production do
   gem "pg" # for Heroku deployment
+  gem "postgresql"
 end
