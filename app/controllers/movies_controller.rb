@@ -3,14 +3,19 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    sort_column = params[:sort] || session[:sort] || "title"
-    direction = params[:direction] || session[:direction] || "asc"
-    # session[:direction] = "asc" unless session[:direction]
+    session[:direction] ||= "asc" # Set default direction if not already set
 
-    @movies = Movie.order(sort_column => direction)
+    if params[:sort]
+      session[:sort] = params[:sort]
+      session[:direction] = params[:direction] if params[:direction]
+    end
 
-    session[:sort] = sort_column
-    session[:direction] = direction
+    @movies = Movie.all
+
+    if session[:sort]
+      @movies = @movies.order(session[:sort])
+      @movies = @movies.reverse_order if session[:direction] == "desc"
+    end
   end
 
   # GET /movies/1 or /movies/1.json
