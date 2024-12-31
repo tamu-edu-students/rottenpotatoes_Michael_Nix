@@ -157,3 +157,70 @@ h1 {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     background-color: white;
 }
+
+.movie-form {
+  max-width: 600px; /* Set a maximum width for the form */
+  margin: 20px auto; /* Center the form */
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.movie-form .field {
+  margin-bottom: 15px;
+}
+
+.movie-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.movie-form input[type="text"],
+.movie-form textarea,
+.movie-form input[type="date"] {
+  width: calc(100% - 12px); /* Full width minus padding and border */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.movie-form textarea { /* Special styling for textareas */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.movie-form .actions {
+  text-align: center; /* Center the submit button */
+  margin-top: 20px;
+}
+
+.movie-form input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.movie-form input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.error-explanation {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.error-explanation ul {
+    margin-left: 20px;
+    list-style-type: disc;
+}
