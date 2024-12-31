@@ -18,7 +18,7 @@
   # Build JSON APIs with ease [https://github.com/rails/jbuilder]
   gem "jbuilder"
 
-  gem "pg"
+  # gem "pg"
   # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
   # gem "bcrypt", "~> 3.1.7"
 
@@ -26,9 +26,9 @@
   gem "tzinfo-data", platforms: %i[ windows jruby ]
 
   # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
-  gem "solid_cache"
-  gem "solid_queue"
-  gem "solid_cable"
+  # gem "solid_cache"
+  # gem "solid_queue"
+  # gem "solid_cable"
 
   # Reduces boot times through caching; required in config/boot.rb
   gem "bootsnap", require: false
@@ -51,7 +51,7 @@
 
     # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
     gem "rubocop-rails-omakase", require: false
-    # gem "sqlite3", ">= 2.1", require: false
+    gem "sqlite3", ">= 2.1", require: false
   end
 
   group :development do
@@ -65,6 +65,6 @@
     gem "selenium-webdriver"
   end
 
-  # group :production do
-  #   gem "pg" # for Heroku deployment
-  # end
+  group :production do
+    gem "pg" # for Heroku deployment
+  end
