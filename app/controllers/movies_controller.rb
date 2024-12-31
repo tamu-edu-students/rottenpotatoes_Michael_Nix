@@ -4,12 +4,8 @@ class MoviesController < ApplicationController
   # GET /movies or /movies.json
   def index
     @movies = Movie.all
-    if params[:sort] == "title"
-      @movies = @movies.order(:title)
-    elsif params[:sort] == "release_date"
-      @movies = @movies.order(:release_date)
-    elsif params[:sort] == "rating"
-      @movies = @movies.order(:rating)
+    if params[:sort].present? && params[:direction].present?
+      @movies = @movies.order("#{params[:sort]} #{params[:direction]}")
     end
   end
 
