@@ -23,6 +23,22 @@
   transition: background-color 0.3s ease; /* Smooth hover effect */
 }
 
+#movies th a {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically align the text and arrow */
+  text-decoration: none; /* Remove underlines from links */
+  color: inherit; /* Inherit the color from the th */
+}
+
+#movies th a::after { /* Add spacing between text and arrow */
+    content: ""; /* Required for ::after */
+    margin-left: 5px;
+}
+
+#movies th a .arrow {
+  font-size: smaller; /* Make arrows slightly smaller */
+}
+
 #movies th:hover {
     background-color: #e0e0e0;
 }

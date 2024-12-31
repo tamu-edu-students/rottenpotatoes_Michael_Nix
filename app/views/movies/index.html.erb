@@ -8,9 +8,18 @@
   <table>
     <thead>
       <tr>
-        <th><%= link_to "Title", movies_path(sort: "title", direction: (params[:sort] == "title" && session[:direction] == "asc") ? "desc" : "asc") %></th>
-        <th><%= link_to "Rating", movies_path(sort: "rating", direction: (params[:sort] == "rating" && session[:direction] == "asc") ? "desc" : "asc") %></th>
-        <th><%= link_to "Release Date", movies_path(sort: "release_date", direction: (params[:sort] == "release_date" && session[:direction] == "asc") ? "desc" : "asc") %></th>
+        <th>
+          <%= link_to "Title", movies_path(sort: "title", direction: (params[:sort] == "title" && session[:direction] == "asc") ? "desc" : "asc") %>
+          <%= session[:sort] == "title" ? (session[:direction] == "asc" ? "▼" : "▲") : ""%>
+        </th>
+        <th>
+          <%= link_to "Rating", movies_path(sort: "rating", direction: (params[:sort] == "rating" && session[:direction] == "asc") ? "desc" : "asc") %>
+          <%= session[:sort] == "rating" ? (session[:direction] == "asc" ? "▼" : "▲") : ""%>  
+        </th>
+        <th>
+          <%= link_to "Release Date", movies_path(sort: "release_date", direction: (params[:sort] == "release_date" && session[:direction] == "asc") ? "desc" : "asc") %>
+          <%= session[:sort] == "release_date" ? (session[:direction] == "asc" ? "▼" : "▲") : ""%>
+        </th>
         <th>View</th>
       </tr>
     </thead>
