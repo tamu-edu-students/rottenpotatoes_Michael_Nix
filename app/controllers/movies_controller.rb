@@ -3,9 +3,18 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    @movies = Movie.all
-    if params[:sort].present? && params[:direction].present?
-      @movies = @movies.order("#{params[:sort]} #{params[:direction]}")
+    session[:sort] = params[:sort] if params[:sort]
+    session[:direction] = params[:direction] if params[:direction]
+
+    # Use session values as default if params are not provided
+    sort_column = session[:sort] || "none"
+    sort_direction = session[:direction] || "none"
+
+    # Update the movies query with sorting
+    if sort_column == "none" || sort_direction == "none" then
+      @movies = Movie.all
+    else
+      @movies = Movie.order("#{sort_column} #{sort_direction}")
     end
   end
 
